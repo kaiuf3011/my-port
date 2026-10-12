@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaiuf M — Engineer by Curiosity</title>
+  <meta name="description" content="Kaiuf M — CSE (AI & ML) student building AI systems, RAG assistants, AR/VR experiences and games." />
+  <meta name="theme-color" content="#1c344d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="is-loading">
+
+  <!-- burst mark, reused everywhere -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="burst" viewBox="-50 -50 100 100">
+      <g fill="currentColor">
+        <rect x="-4" y="-48" width="8" height="40" rx="4" />
+        <rect x="-4" y="-48" width="8" height="40" rx="4" transform="rotate(30)" />
+        <rect x="-4" y="-48" width="8" height="38" rx="4" transform="rotate(60)" />
+        <rect x="-4" y="-48" width="8" height="42" rx="4" transform="rotate(90)" />
+        <rect x="-4" y="-48" width="8" height="36" rx="4" transform="rotate(120)" />
+        <rect x="-4" y="-48" width="8" height="40" rx="4" transform="rotate(150)" />
+        <rect x="-4" y="-48" width="8" height="40" rx="4" transform="rotate(180)" />
+        <rect x="-4" y="-48" width="8" height="37" rx="4" transform="rotate(210)" />
+        <rect x="-4" y="-48" width="8" height="42" rx="4" transform="rotate(240)" />
+        <rect x="-4" y="-48" width="8" height="38" rx="4" transform="rotate(270)" />
+        <rect x="-4" y="-48" width="8" height="40" rx="4" transform="rotate(300)" />
+        <rect x="-4" y="-48" width="8" height="36" rx="4" transform="rotate(330)" />
+        <circle r="9" />
+      </g>
+    </symbol>
+  </svg>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__logo">
+      <span class="logo-word"><span>k</span><span>a</span><span>i</span><span>u</span><span>f</span></span>
+      <span class="loader__tag"><em>engineer &amp; builder</em></span>
+    </div>
+    <button class="loader__skip" id="skipLoader">Skip <span>→</span></button>
+  </div>
+
+  <div class="cursor" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <a href="#top" class="header__logo" aria-label="Kaiuf M — top">kaiuf</a>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu" aria-expanded="false">
+      <span class="menu-btn__label">Menu</span>
+      <span class="menu-btn__icon"><i></i><i></i></span>
+    </button>
+  </header>
+
+  <!-- side pill (resume) -->
+  <a class="side-pill" href="assets/Kaiuf_M_Resume.pdf" target="_blank" rel="noopener" aria-label="Resume">CV.</a>
+
+  <!-- ============ MENU ============ -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <div class="menu__top">
+      <span class="menu__logo">kaiuf</span>
+      <span class="menu__label">[ menu ]</span>
+      <button class="menu__close" id="menuClose" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="menu__cols">
+      <a href="#work" class="menu__col is-active" style="--img: url('assets/kaiuf-mountain.jpg')">
+        <span class="menu__name"><b>↗</b>Work</span>
+        <em class="menu__caption">The work, unfiltered.</em>
+      </a>
+      <a href="#about" class="menu__col"><span class="menu__name"><b>↗</b>About</span><em class="menu__caption">Engineer by curiosity.</em></a>
+      <a href="#method" class="menu__col"><span class="menu__name"><b>↗</b>Skills</span><em class="menu__caption">Five territories.</em></a>
+      <a href="#experience" class="menu__col" style="--img: url('assets/sih-2026-win.jpg')"><span class="menu__name"><b>↗</b>Experience</span><em class="menu__caption">Never building alone.</em></a>
+      <a href="#contact" class="menu__col"><span class="menu__name"><b>↗</b>Contact</span><em class="menu__caption">Let's build something.</em></a>
+    </nav>
+    <div class="menu__bottom">
+      <div class="menu__socials">
+        <!-- TODO: replace with your real profile URLs -->
+        <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <div class="menu__contact">
+        <a href="mailto:hello@example.com" class="serif-i">hello@example.com</a>
+        <a href="assets/Kaiuf_M_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="top">
+
+    <!-- ============ 1. INTRO (light) ============ -->
+    <section class="intro theme-light" data-theme="light">
+      <h1 class="intro__logo">kaiuf</h1>
+      <svg class="intro__burst spin-slow"><use href="#burst" /></svg>
+      <p class="label">AI / ML Engineer &amp; Creative Technologist</p>
+      <p class="intro__italic serif-i">in progress</p>
+      <div class="cycler" aria-label="Focus areas">
+        <ul class="cycler__track">
+          <li>RAG Systems</li><li>AR &amp; VR</li><li>Unity Games</li><li>Hackathons</li><li>Space-Weather AI</li><li>Computer Vision</li>
+          <li>RAG Systems</li><li>AR &amp; VR</li><li>Unity Games</li>
+        </ul>
+      </div>
+      <a href="#hero" class="scroll-cue"><span class="label">Scroll</span><i></i></a>
+    </section>
+
+    <!-- ============ 2. HERO (dark photo) ============ -->
+    <section class="hero theme-dark" id="hero" data-theme="dark">
+      <div class="hero__photo" aria-hidden="true">
+        <div class="hero__photo-move"><img src="assets/kaiuf-mountain.jpg" alt="" /></div>
+        <div class="hero__fog"></div>
+        <div class="hero__fog hero__fog--2"></div>
+        <span class="hero__photo-line"></span>
+      </div>
+      <div class="hero__copy">
+        <h2 class="hero__title">
+          <span class="reveal-line"><span>I build systems that answer</span></span>
+          <span class="reveal-line"><span>before you finish asking</span></span>
+          <span class="reveal-line"><em class="serif-i hl">the question.</em></span>
+        </h2>
+      </div>
+      <div class="hero__rotator">
+        <span class="label">Engineer</span>
+        <span class="rotator" id="rotator">
+          <em class="serif-i is-on">of AI systems</em>
+          <em class="serif-i">of RAG assistants</em>
+          <em class="serif-i">of AR experiences</em>
+          <em class="serif-i">of Unity games</em>
+          <em class="serif-i">of hackathon prototypes</em>
+        </span>
+      </div>
+      <p class="sr-only">Engineer of AI systems, RAG assistants, AR experiences, Unity games and hackathon prototypes.</p>
+    </section>
+
+    <!-- ============ 3. I AM KAIUF (expanding card) ============ -->
+    <section class="weare theme-light" id="about" data-theme="light">
+      <div class="weare__sticky">
+        <p class="weare__small">I AM <em class="serif-i hl">Kaiuf.</em></p>
+        <div class="weare__frame" aria-hidden="true">
+          <i></i><i></i><i></i><i></i>
+          <span class="weare__side weare__side--l"><span>Engineer ✦ Builder ✦ Explorer ✦ Engineer ✦ Builder ✦ Explorer ✦</span></span>
+          <span class="weare__side weare__side--r"><span>AI · XR · Games · AI · XR · Games · AI · XR · Games ·</span></span>
+        </div>
+        <ul class="weare__chips" aria-hidden="true">
+          <li class="chip chip--hot" style="--x:-1; --y:-1; left:14%; top:30%">RAG systems</li>
+          <li class="chip" style="--x:-1.2; --y:.2; left:8%; top:52%">Unity · C#</li>
+          <li class="chip chip--outline" style="--x:-1; --y:1; left:17%; top:72%">10+ hackathons</li>
+          <li class="chip" style="--x:1; --y:-1; right:13%; top:28%">AR / VR</li>
+          <li class="chip chip--hot" style="--x:1.2; --y:.1; right:7%; top:50%">★ SIH '26 best team</li>
+          <li class="chip chip--outline" style="--x:1; --y:1; right:16%; top:70%">AI agents</li>
+        </ul>
+        <div class="weare__card">
+          <div class="weare__reel" aria-hidden="true">
+            <figure class="is-on" data-cap="Somewhere above the clouds"><img src="assets/kaiuf-mountain.jpg" alt="" /></figure>
+            <figure data-cap="SIH 2026 · Best Performing Team"><img src="assets/sih-2026-win.jpg" alt="" /></figure>
+            <figure data-cap="On stage · TEDxRTC"><img src="assets/tedx.jpg" alt="" /></figure>
+            <figure data-cap="Global Game Jam 2026 · Kerala"><img src="assets/ggj-2026.jpg" alt="" /></figure>
+            <figure data-cap="SIH 2025 · National finalist"><img src="assets/sih25-team.jpg" alt="" /></figure>
+            <p class="weare__cap"><span class="label">(Now showing)</span> <em class="serif-i" id="reelCap">Somewhere above the clouds</em></p>
+            <span class="weare__count label" id="reelCount">01 / 05</span>
+          </div>
+          <svg class="weare__burst"><use href="#burst" /></svg>
+          <div class="weare__content">
+            <p class="label label--hl">(About)</p>
+            <p class="weare__lead">
+              A Computer Science Engineering student specializing in <em class="serif-i">Artificial Intelligence &amp; Machine Learning</em>
+              at Rathinam Global Deemed to be University — building AI systems, immersive experiences and games that connect software with the real world.
+            </p>
+            <div class="weare__stats">
+              <div><b data-count="10" data-suffix="+">0</b><span class="label">Hackathons</span></div>
+              <div><b data-count="2">0</b><span class="label">SIH projects</span></div>
+              <div><b data-count="9.04" data-decimals="2">0</b><span class="label">CGPA</span></div>
+              <div><b data-count="6">0</b><span class="label">Featured builds</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="weare__big">I AM <em class="serif-i hl">Kaiuf.</em></p>
+      </div>
+    </section>
+
+    <!-- ============ 4. MANIFESTO (pinned) ============ -->
+    <section class="manifesto theme-dark" data-theme="dark">
+      <div class="manifesto__sticky">
+        <svg class="manifesto__burst"><use href="#burst" /></svg>
+        <div class="manifesto__slides">
+          <div class="statement is-on">
+            <h2>Most people wait until they feel <mark class="tape">ready.</mark></h2>
+            <p class="serif-i">I build to get ready.</p>
+          </div>
+          <div class="statement">
+            <h2>The best way to learn engineering is to <mark class="tape">build things.</mark></h2>
+            <p class="serif-i">Then break them — on purpose.</p>
+          </div>
+          <div class="statement">
+            <h2>Understand why it failed. <mark class="tape">Make it better.</mark></h2>
+            <p class="serif-i">Repeat until it's real.</p>
+          </div>
+        </div>
+        <p class="manifesto__count" aria-hidden="true"><b id="manifestoNum">01</b><span>/ 03</span></p>
+        <p class="manifesto__label label">Manifesto</p>
+        <div class="manifesto__dots"><i class="is-on"></i><i></i><i></i></div>
+      </div>
+    </section>
+
+    <!-- ============ 5. DEFINITION ============ -->
+    <section class="definition theme-light" data-theme="light">
+      <div class="definition__box">
+        <span class="bracket bracket--l" aria-hidden="true"></span>
+        <span class="bracket bracket--r" aria-hidden="true"></span>
+        <p class="label">[ Definition ]</p>
+        <h2 class="definition__word">KAIUF<svg class="definition__star"><use href="#burst" /></svg></h2>
+        <p class="definition__meta"><span class="serif-i">\ kai·uf \</span><span class="pill">Proper noun</span></p>
+        <p class="definition__text" id="defText"><span class="serif-i num">1.</span> An engineer by curiosity and a builder by instinct, who turns ambitious ideas into working prototypes — and isn't afraid to break them to find out why.</p>
+        <p class="definition__syn"><span class="serif-i">syn.</span> BUILD · <span class="hl">BREAK</span> · REBUILD.</p>
+        <p class="definition__author label">This definition has an author: <a href="#contact">Kaiuf M</a></p>
+      </div>
+    </section>
+
+    <!-- ============ 6. QUESTION (masked type) ============ -->
+    <section class="question theme-dark" data-theme="dark">
+      <div class="question__mask" aria-hidden="true">kaiuf</div>
+      <h2 class="question__title serif">But what do I build, <br />exactly <span class="hl">?</span></h2>
+      <div class="qstrip" aria-hidden="true">
+        <div class="qstrip__row qstrip__row--a">
+          <span>Aphelion AI</span><i>✦</i><span class="o">RGU AI Assistant</span><i>✦</i><span>Safety AR</span><i>✦</i><span class="o">Seismora</span><i>✦</i><span>The Knight</span><i>✦</i><span class="o">MBBS AI</span><i>✦</i>
+          <span>Aphelion AI</span><i>✦</i><span class="o">RGU AI Assistant</span><i>✦</i><span>Safety AR</span><i>✦</i><span class="o">Seismora</span><i>✦</i>
+        </div>
+        <div class="qstrip__row qstrip__row--b">
+          <span class="o">Space weather</span><i>✦</i><span>RAG</span><i>✦</i><span class="o">Computer vision</span><i>✦</i><span>Prosthetics</span><i>✦</i><span class="o">Unity</span><i>✦</i><span>EdTech</span><i>✦</i>
+          <span class="o">Space weather</span><i>✦</i><span>RAG</span><i>✦</i><span class="o">Computer vision</span><i>✦</i><span>Prosthetics</span><i>✦</i>
+        </div>
+      </div>
+      <a href="#work" class="qcue"><span class="label">6 featured builds</span><i>↓</i></a>
+    </section>
+
+    <!-- ============ 7. WORK (stacked full-screen slides) ============ -->
+    <section class="work" id="work">
+      <nav class="work-index" id="workIndex" aria-label="Project index">
+        <a href="#p1">01</a><a href="#p2">02</a><a href="#p3">03</a><a href="#p4">04</a><a href="#p5">05</a><a href="#p6">06</a>
+      </nav>
+
+      <!--
+        STATUS: edit each .status to match reality (In development / Prototype / Completed).
+      -->
+      <article class="slide" id="p1" data-theme="dark" style="--bg:#3a1d26; --accent:#d9a441">
+        <header class="slide__head"><span><b>01</b> / Featured build</span><span>AI · Data</span></header>
+        <div class="slide__text">
+          <p class="slide__client"><b>APHELION AI</b> <span class="status">In development</span></p>
+          <p class="slide__tags">Python · Time-series · AI/ML · Data visualization</p>
+          <h3 class="slide__title serif-i">Aphelion AI</h3>
+          <p class="slide__desc serif-i">Space-weather intelligence from India's Aditya-L1 mission: a modular pipeline turning solar X-ray data (SoLEXS &amp; HEL1OS) into insight, with a mission-control dashboard.</p>
+          <a href="#" class="cta-circle">View project <span>→</span></a>
+        </div>
+        <div class="slide__media">
+          <div class="viz viz--sun">
+            <div class="sun"></div>
+            <svg class="xray" viewBox="0 0 300 80" preserveAspectRatio="none"><polyline points="0,60 20,58 40,55 55,50 70,57 90,52 105,30 112,12 120,40 140,48 160,50 175,46 190,52 210,35 220,25 232,44 250,50 270,52 300,48" /></svg>
+            <span class="viz__label">SoLEXS · HEL1OS · X-ray flux</span>
+          </div>
+        </div>
+        <span class="slide__num" aria-hidden="true">01</span>
+      </article>
+
+      <article class="slide" id="p2" data-theme="dark" style="--bg:#173f47; --accent:#9fd3dc">
+        <header class="slide__head"><span><b>02</b> / Featured build</span><span>AI · RAG</span></header>
+        <div class="slide__text">
+          <p class="slide__client"><b>RGU AI ASSISTANT</b> <span class="status">Prototype</span></p>
+          <p class="slide__tags">TypeScript · Node.js · ChromaDB · Fuse.js · LLM APIs</p>
+          <h3 class="slide__title serif-i">RGU AI Assistant</h3>
+          <p class="slide__desc serif-i">A university assistant that answers from a real knowledge base, not guesses. Exact-match routing and keyword retrieval stopped short acronyms from pulling up the wrong documents.</p>
+          <button class="cta-circle" data-open="rguCase">Explore architecture <span>→</span></button>
+        </div>
+        <div class="slide__media">
+          <div class="viz viz--chat">
+            <div class="bubble bubble--user">What's the fee structure for CSE AI&amp;ML?</div>
+            <div class="route"><span>intent: fees</span><span>exact-match ✓</span><span>top-k: 4</span></div>
+            <div class="bubble bubble--bot">Here's the current CSE (AI &amp; ML) fee breakdown, from the admissions handbook…<span class="src">[source: admissions.md]</span></div>
+          </div>
+        </div>
+        <span class="slide__num" aria-hidden="true">02</span>
+      </article>
+
+      <article class="slide" id="p3" data-theme="dark" style="--bg:#1c344d; --accent:#e06a8a">
+        <header class="slide__head"><span><b>03</b> / Featured build</span><span>XR · Vision</span></header>
+        <div class="slide__text">
+          <p class="slide__client"><b>JHARKHAND SAFETY AR</b> <span class="status">Prototype</span> <span class="status status--award">★ SIH 2026</span></p>
+          <p class="slide__tags">Python · FastAPI · Computer vision · AR/VR</p>
+          <h3 class="slide__title serif-i">Jharkhand Safety AR</h3>
+          <p class="slide__desc serif-i">Industrial safety training that shows the hazard before it hurts anyone: AR hazard detection, camera-based recognition and interactive VR scenarios.</p>
+          <a href="#" class="cta-circle">View project <span>→</span></a>
+        </div>
+        <div class="slide__media">
+          <div class="viz viz--ar"><div class="ar-frame">
+            <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+            <div class="ar-box ar-box--a"><span>HAZARD · 0.94</span></div>
+            <div class="ar-box ar-box--b"><span>PPE MISSING</span></div>
+            <div class="scanline"></div>
+          </div></div>
+        </div>
+        <span class="slide__num" aria-hidden="true">03</span>
+      </article>
+
+      <article class="slide" id="p4" data-theme="dark" style="--bg:#152a40; --accent:#7fb3bf">
+        <header class="slide__head"><span><b>04</b> / Featured build</span><span>Hardware</span></header>
+        <div class="slide__text">
+          <p class="slide__client"><b>SEISMORA</b> <span class="status">Prototype</span> <span class="status status--award">★ SIH 2025 Finalist</span></p>
+          <p class="slide__tags">Hardware · Product design · 3D printing</p>
+          <h3 class="slide__title serif-i">Seismora</h3>
+          <p class="slide__desc serif-i">A compact, portable device for contouring the soft inserts of 3D-printed prosthetic sockets — practical engineering in service of assistive technology.</p>
+          <a href="#" class="cta-circle">View project <span>→</span></a>
+        </div>
+        <div class="slide__media slide__media--photo">
+          <img src="assets/sih25-prototype.jpg" alt="SEISMORA soft-insert prototypes on the team's table at the SIH 2025 finale" />
+          <span class="media-tag">Prototype · SIH 2025 finale</span>
+          <div class="viz viz--blueprint viz--inset">
+            <svg viewBox="0 0 300 200">
+              <defs><pattern id="grid" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M15 0H0V15" fill="none" stroke="currentColor" stroke-opacity=".15" /></pattern></defs>
+              <rect width="300" height="200" fill="url(#grid)" />
+              <path class="draw" d="M95 40 C 80 90, 90 150, 150 165 C 210 150, 220 90, 205 40" />
+              <path class="draw d2" d="M110 45 C 100 90, 108 140, 150 150 C 192 140, 200 90, 190 45" />
+              <line class="draw" x1="80" y1="40" x2="220" y2="40" />
+              <text x="228" y="44">Ø socket</text><text x="160" y="185">soft insert</text>
+            </svg>
+          </div>
+        </div>
+        <span class="slide__num" aria-hidden="true">04</span>
+      </article>
+
+      <article class="slide" id="p5" data-theme="dark" style="--bg:#4a1828; --accent:#f0b8c6">
+        <header class="slide__head"><span><b>05</b> / Featured build</span><span>Games</span></header>
+        <div class="slide__text">
+          <p class="slide__client"><b>THE KNIGHT</b> <span class="status">Completed</span></p>
+          <p class="slide__tags">Unity · C# · 2D physics · Level design</p>
+          <h3 class="slide__title serif-i">The Knight</h3>
+          <p class="slide__desc serif-i">A 2D platformer in Unity &amp; C#: movement, collisions, level design, and all the small details that make a jump feel right.</p>
+          <a href="#" class="cta-circle">Watch gameplay <span>→</span></a>
+        </div>
+        <div class="slide__media">
+          <div class="viz viz--game">
+            <div class="parallax p1"></div><div class="parallax p2"></div>
+            <div class="platform pl1"></div><div class="platform pl2"></div><div class="platform pl3"></div>
+            <div class="knight"></div>
+            <span class="viz__label">Press ▶ to play</span>
+          </div>
+        </div>
+        <span class="slide__num" aria-hidden="true">05</span>
+      </article>
+
+      <article class="slide" id="p6" data-theme="dark" style="--bg:#22405d; --accent:#efe6d3">
+        <header class="slide__head"><span><b>06</b> / Featured build</span><span>AI · EdTech</span></header>
+        <div class="slide__text">
+          <p class="slide__client"><b>MBBS AI STUDY ASSISTANT</b> <span class="status">In development</span></p>
+          <p class="slide__tags">Python · FastAPI · Vector DB · PWA</p>
+          <h3 class="slide__title serif-i">MBBS Study Assistant</h3>
+          <p class="slide__desc serif-i">An AI study partner for medical students, built on their own textbooks. Planned: document Q&amp;A, an AI tutor, flashcard generation and case-based practice.</p>
+          <a href="#" class="cta-circle">Follow progress <span>→</span></a>
+        </div>
+        <div class="slide__media">
+          <div class="viz viz--cards">
+            <div class="flash f3"><span>Q</span>Which nerve innervates the deltoid?</div>
+            <div class="flash f2"><span>Q</span>Name the branches of the brachial plexus.</div>
+            <div class="flash f1"><span>A</span>Axillary nerve (C5–C6)</div>
+          </div>
+        </div>
+        <span class="slide__num" aria-hidden="true">06</span>
+      </article>
+    </section>
+
+    <!-- ============ 8. INDEX LIST + MARQUEE ============ -->
+    <section class="index theme-light" id="record" data-theme="light">
+      <div class="wrap">
+        <p class="label">(The record)</p>
+        <h2 class="index__title serif">Everything, <em class="serif-i hl">at a glance.</em></h2>
+        <ol class="index__list">
+          <li data-img="assets/sih25-team.jpg"><span>01</span><b>SIH 2025 — National Finalist</b><em>Hackathon · SEISMORA</em></li>
+          <li data-img="assets/sih-2026-win.jpg"><span>02</span><b>SIH 2026 Bootcamp — Best Performing Team</b><em>Thiagarajar College of Engineering · May 2026</em></li>
+          <li data-img="assets/ggj-2026.jpg"><span>03</span><b>Global Game Jam 2026</b><em>Game jam · Kerala</em></li>
+          <li data-img="assets/tedx.jpg"><span>04</span><b>TEDxRTC — Moderator</b><em>On stage · Community</em></li>
+          <li><span>05</span><b>10+ Hackathons</b><em>Prototyping under pressure</em></li>
+          <li><span>06</span><b>Aphelion AI</b><em>AI · Data</em></li>
+          <li><span>07</span><b>RGU AI Assistant</b><em>AI · RAG</em></li>
+          <li><span>08</span><b>Jharkhand Safety AR</b><em>XR · Vision</em></li>
+          <li><span>09</span><b>Seismora</b><em>Hardware</em></li>
+          <li><span>10</span><b>The Knight</b><em>Games</em></li>
+          <li><span>11</span><b>MBBS AI Study Assistant</b><em>AI · EdTech</em></li>
+        </ol>
+        <div class="hover-preview" aria-hidden="true"><img alt="" /></div>
+        <p class="index__more"><span class="label">(More on the way)</span> <em class="serif-i">And this is only the beginning.</em></p>
+      </div>
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>Python</span>·<span>TypeScript</span>·<span>JavaScript</span>·<span>Java</span>·<span>C#</span>·<span>React</span>·<span>Node.js</span>·<span>FastAPI</span>·<span>ChromaDB</span>·<span>Redis</span>·<span>Docker</span>·<span>Unity</span>·<span>Blender</span>·<span>ARCore</span>·<span>Vuforia</span>·
+          <span>Python</span>·<span>TypeScript</span>·<span>JavaScript</span>·<span>Java</span>·<span>C#</span>·<span>React</span>·<span>Node.js</span>·<span>FastAPI</span>·<span>ChromaDB</span>·<span>Redis</span>·<span>Docker</span>·<span>Unity</span>·<span>Blender</span>·<span>ARCore</span>·<span>Vuforia</span>·
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 9. HOW + METHOD ============ -->
+    <section class="question question--how theme-dark" data-theme="dark">
+      <div class="question__mask question__mask--ghost" aria-hidden="true">build</div>
+      <figure class="question__photo" aria-hidden="true"><img src="assets/tedx.jpg" alt="" /></figure>
+      <h2 class="question__title serif">And concretely, <br />how do I do it <span class="hl">?</span></h2>
+    </section>
+
+    <section class="method theme-dark" id="method" data-theme="dark">
+      <div class="wrap">
+        <p class="label">(The method)</p>
+        <h2 class="method__title serif">I work across <em class="serif-i hl">five territories.</em></h2>
+        <p class="method__hint serif-i">Hover each territory to see what lives there.</p>
+        <ol class="territories">
+          <li class="territory">
+            <span class="territory__num"><i></i>01</span>
+            <h3 data-text="AI &amp; Machine Learning">AI &amp; Machine Learning</h3>
+            <p class="territory__body serif-i">RAG · LLM integration · intent classification · vector search · data processing</p>
+          </li>
+          <li class="territory">
+            <span class="territory__num"><i></i>02</span>
+            <h3 data-text="Languages">Languages</h3>
+            <p class="territory__body serif-i">Python · Java · JavaScript · TypeScript · C#</p>
+          </li>
+          <li class="territory">
+            <span class="territory__num"><i></i>03</span>
+            <h3 data-text="Web &amp; Full-Stack">Web &amp; Full-Stack</h3>
+            <p class="territory__body serif-i">React · Node.js · Express · FastAPI · Tailwind CSS</p>
+          </li>
+          <li class="territory">
+            <span class="territory__num"><i></i>04</span>
+            <h3 data-text="Data &amp; Infra">Data &amp; Infra</h3>
+            <p class="territory__body serif-i">ChromaDB · Redis · Docker · Git &amp; GitHub · REST APIs</p>
+          </li>
+          <li class="territory">
+            <span class="territory__num"><i></i>05</span>
+            <h3 data-text="Immersive &amp; Games">Immersive &amp; Games</h3>
+            <p class="territory__body serif-i">Unity · AR · VR · Blender · 3D scanning · Vuforia · ARCore / ARKit</p>
+          </li>
+        </ol>
+        <p class="method__note serif-i">Currently levelling up: <u>AI agents</u>, <u>computer vision</u> and <u>shaders</u>.</p>
+      </div>
+    </section>
+
+    <!-- ============ MOMENT: SIH 2025 FINALIST (collage) ============ -->
+    <section class="finale theme-dark" data-theme="dark" aria-labelledby="finaleTitle">
+      <div class="finale__text">
+        <p class="label">(Moment 01) · Smart India Hackathon 2025</p>
+        <h2 id="finaleTitle">National <span class="tape-hl">Finalist.</span></h2>
+        <p class="serif-i finale__lead">We took SEISMORA — a portable contouring device for 3D-printed prosthetic sockets — all the way to the grand finale.</p>
+        <ul class="finale__facts">
+          <li><b>SIH</b><span>2025 finalist</span></li>
+          <li><b>SEISMORA</b><span>Assistive tech</span></li>
+          <li><b>'25 → '26</b><span>Finalist, then best team</span></li>
+        </ul>
+        <a href="#p4" class="cta-circle">See the project <span>→</span></a>
+      </div>
+      <div class="finale__collage">
+        <figure class="polaroid polaroid--a" style="--speed:-60"><span class="tape tape--a"></span><img src="assets/sih25-team.jpg" alt="Kaiuf with the SIH 2025 team and mentors at the finale venue" /><figcaption class="serif-i">The finale crew</figcaption></figure>
+        <figure class="polaroid polaroid--b" style="--speed:40"><span class="tape tape--b"></span><img src="assets/sih25-prototype.jpg" alt="Team around the SEISMORA prototypes" /><figcaption class="serif-i">Prototypes on the table</figcaption></figure>
+        <figure class="polaroid polaroid--c" style="--speed:-20"><span class="tape tape--a"></span><img src="assets/sih25-crew.jpg" alt="Selfie with the SIH 2025 team in yellow team shirts" /><figcaption class="serif-i">Team yellow</figcaption></figure>
+        <svg class="finale__burst spin-slow" aria-hidden="true"><use href="#burst" /></svg>
+      </div>
+    </section>
+
+    <!-- ============ MOMENT: SIH 2026 WIN ============ -->
+    <section class="moment theme-dark" data-theme="dark" aria-labelledby="momentTitle">
+      <div class="moment__media"><img src="assets/sih-2026-win.jpg" alt="Kaiuf and the team with the Best Performing Team trophy at Thiagarajar College of Engineering, Madurai" /></div>
+      <div class="moment__caption">
+        <p class="label">(Moment 02) · 11–15 May 2026</p>
+        <h2 id="momentTitle">Best Performing Team <em class="serif-i">— SIH 2026 IDE Bootcamp.</em></h2>
+        <p class="serif-i">Thiagarajar College of Engineering, Madurai. Five days, one trophy, a room full of builders.</p>
+      </div>
+    </section>
+
+    <!-- ============ 10. ROLLING NAMES ============ -->
+    <section class="names theme-light" data-theme="light">
+      <div class="names__roll" aria-hidden="true">
+        <ul class="names__track">
+          <li>Smart India Hackathon</li><li>Thiagarajar College</li><li>Global Game Jam</li><li>TEDxRTC</li><li>Rathinam Global University</li><li>Hackathon teams</li>
+          <li>Smart India Hackathon</li><li>Thiagarajar College</li><li>Global Game Jam</li><li>TEDxRTC</li><li>Rathinam Global University</li><li>Hackathon teams</li>
+        </ul>
+      </div>
+      <h2 class="names__cta serif-i">Next, <mark>your team</mark> here?</h2>
+    </section>
+
+    <!-- ============ 11. JOURNAL-STYLE EXPERIENCE ============ -->
+    <section class="journal theme-light" id="experience" data-theme="light">
+      <div class="wrap">
+        <div class="journal__head"><p class="label">(Experience &amp; community)</p><a href="#contact" class="label link-u">Work with me</a></div>
+        <ul class="journal__list">
+          <li class="entry">
+            <span class="entry__thumb entry__thumb--img"><img src="assets/tedx.jpg" alt="Kaiuf on the TEDxRTC stage" /></span>
+            <div><span class="label">Community</span><h3>Moderator at TEDxRTC — keeping the conversation alive between speakers and audience.</h3></div>
+            <span class="label entry__date">Moderator</span>
+          </li>
+          <li class="entry">
+            <span class="entry__thumb entry__thumb--img"><img src="assets/sih-2026-win.jpg" alt="Hackathon team with the trophy" /></span>
+            <div><span class="label">Hackathons</span><h3>Technical contributor on hackathon teams: prototype, pitch, ship — against the clock.</h3></div>
+            <span class="label entry__date">10+ events</span>
+          </li>
+          <li class="entry">
+            <span class="entry__thumb entry__thumb--img"><img src="assets/ggj-2026.jpg" alt="Kaiuf and team at Global Game Jam 2026 in Kerala" /></span>
+            <div><span class="label">Game jam · Kerala</span><h3>Global Game Jam 2026 at the Kerala site — a weekend of building games with a team.</h3></div>
+            <span class="label entry__date">2026</span>
+          </li>
+          <li class="entry">
+            <span class="entry__thumb" style="--c:#b23b5c">GAME</span>
+            <div><span class="label">Initiative · In development</span><h3>Building a game-dev community where ambitious ideas become playable experiences.</h3></div>
+            <span class="label entry__date">2026</span>
+          </li>
+          <li class="entry">
+            <span class="entry__thumb" style="--c:#5c9fae">B.E.</span>
+            <div><span class="label">Education</span><h3>B.E. Computer Science &amp; Engineering (AI &amp; ML) — Rathinam Global Deemed to be University. CGPA 9.04.</h3></div>
+            <!-- TODO: set your graduation year -->
+            <span class="label entry__date">Exp. 20XX</span>
+          </li>
+          <li class="entry">
+            <span class="entry__thumb" style="--c:#1c344d">✦</span>
+            <div><span class="label">Beyond the code</span><h3>Game mechanics, automotive &amp; engine tech, 3D worlds, emerging AI tools — and experimental builds with friends.</h3></div>
+            <span class="label entry__date">Always</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 12. FOOTER / CONTACT ============ -->
+  <footer class="footer theme-light" id="contact" data-theme="light">
+    <div class="wrap">
+      <div class="footer__top">
+        <div class="footer__letter">
+          <p class="label">(Let's talk)</p>
+          <h2 class="serif">Got an interesting problem? <br /><em class="serif-i hl">Let's skip the bla-bla.</em></h2>
+          <!-- TODO: replace with your real email -->
+          <a href="mailto:hello@example.com" class="pill-btn">Write to me <span>→</span></a>
+        </div>
+        <div class="footer__side">
+          <svg class="footer__burst spin-slow"><use href="#burst" /></svg>
+          <p class="label">(Email me)</p>
+          <a href="mailto:hello@example.com" class="footer__email">hello@example.com</a>
+          <ul class="footer__social">
+            <li><a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub ↗</a></li>
+            <li><a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+            <li><a href="assets/Kaiuf_M_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer__logo">kaiuf</p>
+      <div class="footer__links">
+        <p class="label">Kaiuf</p>
+        <p><a href="#work">Work</a><a href="#about">About</a><a href="#method">Skills</a><a href="#experience">Experience</a><a href="#contact">Contact</a></p>
+        <p class="label">Projects</p>
+        <p><a href="#p1">Aphelion AI</a><a href="#p2">RGU AI Assistant</a><a href="#p3">Jharkhand Safety AR</a><a href="#p4">Seismora</a><a href="#p5">The Knight</a><a href="#p6">MBBS Study Assistant</a></p>
+        <p class="label">Focus</p>
+        <p><span>RAG systems</span><span>AI agents</span><span>AR / VR</span><span>Unity</span><span>Computer vision</span><span>Full-stack</span></p>
+      </div>
+      <div class="footer__bottom">
+        <span>© <span id="year"></span> Kaiuf M · Built with curiosity</span>
+        <a href="#top" class="to-top">Back to top <span>↑</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ RGU CASE STUDY MODAL ============ -->
+  <dialog class="case" id="rguCase" aria-labelledby="rguCaseTitle">
+    <button class="case__close" data-close aria-label="Close">✕</button>
+    <p class="label">(Engineering deep-dive)</p>
+    <h2 id="rguCaseTitle" class="serif">RGU AI Assistant — <em class="serif-i">how a query flows.</em></h2>
+    <div class="pipeline">
+      <div class="node"><span>01</span>User query</div><div class="edge"></div>
+      <div class="node"><span>02</span>Intent classifier</div><div class="edge"></div>
+      <div class="node node--hl"><span>03</span>Exact-match router</div><div class="edge"></div>
+      <div class="node"><span>04</span>Hybrid retrieval<small>ChromaDB + Fuse.js</small></div><div class="edge"></div>
+      <div class="node"><span>05</span>Grounded LLM answer</div>
+    </div>
+    <div class="case__cols">
+      <div>
+        <h3>The problem</h3>
+        <p>Pure semantic search was <strong>contaminating results</strong>: short acronyms (department and course codes) matched the wrong documents
+          because embeddings treat them as near-synonyms. Students got confident answers about the wrong program.</p>
+      </div>
+      <div>
+        <h3>What I built</h3>
+        <p>An <strong>exact-match routing layer</strong> that catches known entities and acronyms before vector search, plus
+          <strong>sparse (keyword) retrieval</strong> via Fuse.js blended with ChromaDB results. Conversation state carries context between turns,
+          and a fallback path responds honestly when retrieval confidence is low.</p>
+      </div>
+    </div>
+    <p class="case__note">TODO: add before/after accuracy numbers from your tests — they make this case study land.</p>
+  </dialog>
+
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

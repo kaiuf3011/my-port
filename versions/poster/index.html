@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaiuf M — Engineer by Curiosity</title>
+  <meta name="description" content="Kaiuf M — CSE (AI & ML) student building AI systems, RAG assistants, AR/VR experiences and games." />
+  <meta name="theme-color" content="#1c344d" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Jost:wght@400;500;600&family=Playfair+Display:ital,wght@1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav__logo" aria-label="Kaiuf M — home">
+      <span class="nav__mark">KM</span>
+      <span class="nav__name">Kaiuf <span class="dash">—</span> Portfolio</span>
+    </a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact" class="nav__cta">Let's Connect</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <canvas id="heroCanvas" aria-hidden="true"></canvas>
+      <svg class="traces" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 1600 1000">
+        <path d="M0 470 H520 V560 H760" /><circle cx="760" cy="560" r="6" />
+        <path d="M1040 430 V300 H1100" /><circle cx="1100" cy="300" r="6" />
+        <path d="M1480 360 V420 H1600" />
+        <path d="M80 690 H680 V760 H1600" /><circle cx="680" cy="760" r="6" /><circle cx="1540" cy="760" r="6" />
+      </svg>
+
+      <div class="container hero__grid">
+        <div class="hero__top">
+          <p class="kicker reveal">Kaiuf M <span>—</span> AI &amp; ML Engineering</p>
+          <h1 class="hero__title">
+            <span class="line"><span class="word">Engineer by</span></span>
+            <span class="line"><span class="word">Curiosity.</span></span>
+            <span class="line"><span class="word">Builder by</span></span>
+            <span class="line line--tape"><span class="word tape-block">Instinct.</span></span>
+          </h1>
+        </div>
+
+        <aside class="hero__aside">
+          <p class="serif-quote reveal">
+            I build AI-powered systems, immersive experiences and games — technology that connects software with the real world.
+          </p>
+          <p class="kicker kicker--teal reveal">AI / ML <span>×</span> XR <span>×</span> Games</p>
+
+          <div class="stickers reveal" aria-hidden="true">
+            <svg class="sticker sticker--pad" viewBox="0 0 220 140">
+              <path d="M40 30 Q110 10 180 30 Q210 40 212 90 Q214 128 186 128 Q166 128 150 100 H70 Q54 128 34 128 Q6 128 8 90 Q10 40 40 30Z" fill="#efe6d3" />
+              <path d="M48 42 Q110 24 172 42 Q198 50 200 90 Q201 116 184 116 Q170 116 158 90 H62 Q50 116 36 116 Q19 116 20 90 Q22 50 48 42Z" fill="#b23b5c" />
+              <rect x="44" y="66" width="34" height="9" rx="2" fill="#efe6d3" /><rect x="56.5" y="53.5" width="9" height="34" rx="2" fill="#efe6d3" />
+              <rect x="96" y="66" width="10" height="5" rx="2" fill="#1c344d" /><rect x="110" y="66" width="10" height="5" rx="2" fill="#1c344d" />
+              <circle cx="160" cy="56" r="7" fill="#5c9fae" /><circle cx="176" cy="70" r="7" fill="#efe6d3" />
+              <circle cx="144" cy="70" r="7" fill="#556b2f" /><circle cx="160" cy="84" r="7" fill="#1c344d" />
+            </svg>
+
+            <div class="ticket ticket--hero">
+              <span class="ticket__tape"></span>
+              <div class="ticket__stub"><span>Admit One</span></div>
+              <div class="ticket__main">
+                <strong>Hackathon Pass</strong>
+                <em>Build · Ship · Repeat</em>
+                <span class="barcode"></span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="hero__portrait reveal">
+          <span class="bulb" aria-hidden="true">
+            <svg viewBox="0 0 80 100"><g stroke="#efe6d3" stroke-width="4" stroke-linecap="round"><path d="M40 4v10M10 16l7 7M70 16l-7 7" /></g>
+              <circle cx="40" cy="50" r="22" fill="#efe6d3" /><path d="M32 54 Q40 38 48 54" fill="none" stroke="#b23b5c" stroke-width="4" stroke-linecap="round" />
+              <rect x="30" y="72" width="20" height="12" rx="3" fill="#5c9fae" /></svg>
+          </span>
+          <span class="tape tape--portrait" aria-hidden="true"></span>
+          <div class="arch">
+            <img src="../../assets/kaiuf.jpg" alt="Kaiuf M wearing headphones and sunglasses" />
+          </div>
+          <div class="nameplate"><span>Kaiuf M</span></div>
+          <div class="stamp" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="stampCircle" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0" /></defs>
+              <circle cx="60" cy="60" r="58" fill="#b23b5c" />
+              <circle cx="60" cy="60" r="52" fill="none" stroke="#efe6d3" stroke-width="1" stroke-dasharray="2 3" opacity=".6" />
+              <text><textPath href="#stampCircle">AI · ML · XR · GAMES · BUILD ·</textPath></text>
+              <path d="M60 40 l6 13 14 1 -11 9 4 14 -13 -8 -13 8 4 -14 -11 -9 14 -1z" fill="#efe6d3" />
+            </svg>
+          </div>
+          <p class="kicker portrait__caption">CSE · Artificial Intelligence &amp; Machine Learning</p>
+        </div>
+
+        <div class="hero__build">
+          <p class="kicker kicker--teal reveal">What I build</p>
+          <ol class="numerals">
+            <li class="reveal"><i>i</i><div><h3>Intelligent Systems</h3><p>RAG assistants, AI agents and LLM-powered apps grounded in real data.</p></div></li>
+            <li class="reveal"><i>ii</i><div><h3>Immersive Experiences</h3><p>AR safety training, VR environments and computer vision.</p></div></li>
+            <li class="reveal"><i>iii</i><div><h3>Games</h3><p>Unity &amp; C# — playable results, big ideas, small beginnings.</p></div></li>
+            <li class="reveal"><i>iv</i><div><h3>Hackathon Prototypes</h3><p>10+ hackathons. Idea to working demo, against the clock.</p></div></li>
+          </ol>
+          <p class="hero__typed reveal"><span class="mono">&gt; currently building</span> <em class="typed" id="typed">intelligent systems</em><span class="caret">_</span></p>
+          <div class="hero__ctas reveal">
+            <a href="#projects" class="btn btn--primary magnetic">Explore My Work <span class="arrow">→</span></a>
+            <!-- TODO: drop your resume at ../../assets/Kaiuf_M_Resume.pdf -->
+            <a href="../../assets/Kaiuf_M_Resume.pdf" class="btn btn--ghost magnetic" target="_blank" rel="noopener">View Resume</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="banner reveal">
+          <p>Build it. Break it. Understand why it failed. Make it better.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Learn</span><i>✦</i><span>Build</span><i>✦</i><span>Collaborate</span><i>✦</i><span>Compete</span><i>✦</i><span>Grow Together</span><i>✦</i>
+        <span>Learn</span><i>✦</i><span>Build</span><i>✦</i><span>Collaborate</span><i>✦</i><span>Compete</span><i>✦</i><span>Grow Together</span><i>✦</i>
+        <span>Learn</span><i>✦</i><span>Build</span><i>✦</i><span>Collaborate</span><i>✦</i><span>Compete</span><i>✦</i><span>Grow Together</span><i>✦</i>
+        <span>Learn</span><i>✦</i><span>Build</span><i>✦</i><span>Collaborate</span><i>✦</i><span>Compete</span><i>✦</i><span>Grow Together</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="container about__grid">
+        <div>
+          <p class="kicker reveal"><b>01</b> — Who am I</p>
+          <h2 class="section-title reveal">I learn by <span class="tape-block tape-block--sm">building</span> things.</h2>
+          <p class="serif-quote serif-quote--lg reveal">…breaking them, understanding why they failed, and making them better.</p>
+        </div>
+
+        <div class="about__right">
+          <p class="lead reveal">
+            I'm a Computer Science Engineering student specializing in Artificial Intelligence and Machine Learning at
+            <strong>Rathinam Global Deemed to be University</strong>.
+          </p>
+          <p class="reveal">
+            I'm drawn to technology that goes beyond conventional applications — from AI-powered systems and intelligent agents
+            to augmented-reality experiences and interactive games. I enjoy experimenting with new tools, competing in hackathons,
+            and turning ambitious ideas into working prototypes.
+          </p>
+          <p class="reveal">
+            My experience spans AI application development, retrieval-augmented generation, full-stack development,
+            Unity game development, and immersive technologies.
+          </p>
+
+          <div class="stats reveal">
+            <div class="stat"><span class="stat__num" data-count="10" data-suffix="+">0</span><span class="stat__label">Hackathons</span></div>
+            <div class="stat"><span class="stat__num" data-count="2">0</span><span class="stat__label">SIH Projects</span></div>
+            <div class="stat"><span class="stat__num" data-count="9.04" data-decimals="2">0</span><span class="stat__label">CGPA</span></div>
+          </div>
+
+          <p class="kicker kicker--teal reveal">Currently exploring</p>
+          <ul class="chips reveal">
+            <li>AI &amp; Machine Learning</li>
+            <li>AI Agents &amp; RAG</li>
+            <li>Full-Stack Development</li>
+            <li>AR / VR</li>
+            <li>Game Development</li>
+            <li>Computer Vision &amp; 3D</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="kicker reveal"><b>02</b> — Selected work</p>
+            <h2 class="section-title reveal">Where ideas become <span class="tape-block tape-block--sm">reality.</span></h2>
+          </div>
+          <div class="filters reveal" role="tablist" aria-label="Filter projects">
+            <button class="filter is-active" data-filter="all">All</button>
+            <button class="filter" data-filter="ai">AI / ML</button>
+            <button class="filter" data-filter="xr">XR &amp; Games</button>
+            <button class="filter" data-filter="hw">Hardware</button>
+          </div>
+        </div>
+
+        <div class="project-list">
+          <!--
+            STATUS LABELS: is-dev = In Development, is-proto = Prototype, is-done = Completed.
+            Adjust each to match reality before you publish.
+          -->
+
+          <!-- 01 APHELION -->
+          <article class="project reveal" data-cat="ai">
+            <div class="project__visual">
+              <div class="viz viz--sun" aria-hidden="true">
+                <div class="sun"></div>
+                <svg class="xray" viewBox="0 0 300 80" preserveAspectRatio="none">
+                  <polyline points="0,60 20,58 40,55 55,50 70,57 90,52 105,30 112,12 120,40 140,48 160,50 175,46 190,52 210,35 220,25 232,44 250,50 270,52 300,48" />
+                </svg>
+                <span class="viz__label">SoLEXS · HEL1OS · X-ray flux</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <span class="project__idx">i</span>
+                <span class="status is-dev">In Development</span>
+              </div>
+              <h3 class="project__title">APHELION AI</h3>
+              <p class="project__kicker">Space Weather Intelligence Platform</p>
+              <p>An AI-driven platform for analyzing solar behaviour using observations from India's <strong>Aditya-L1</strong> mission —
+                a modular scientific pipeline that turns solar X-ray measurements into meaningful insight.</p>
+              <ul class="ticks">
+                <li>Solar Behaviour Engine</li>
+                <li>Historical data retrieval</li>
+                <li>SoLEXS &amp; HEL1OS X-ray analysis</li>
+                <li>Time-series feature engineering</li>
+                <li>Mission-control dashboard</li>
+              </ul>
+              <ul class="tags"><li>Python</li><li>Time-Series</li><li>AI/ML</li><li>Data Viz</li></ul>
+              <div class="project__links">
+                <a href="#" class="link-arrow">View Project</a>
+                <a href="#" class="link-arrow">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02 RGU AI ASSISTANT -->
+          <article class="project project--flip reveal" data-cat="ai">
+            <div class="project__visual">
+              <div class="viz viz--chat" aria-hidden="true">
+                <div class="bubble bubble--user">What's the fee structure for CSE AI&amp;ML?</div>
+                <div class="route"><span>intent: fees</span><span>exact-match ✓</span><span>top-k: 4</span></div>
+                <div class="bubble bubble--bot">Here's the current CSE (AI &amp; ML) fee breakdown, sourced from the admissions handbook…<span class="src">[source: admissions.md]</span></div>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <span class="project__idx">ii</span>
+                <span class="status is-proto">Prototype</span>
+              </div>
+              <h3 class="project__title">RGU AI Assistant</h3>
+              <p class="project__kicker">Retrieval-Augmented Generation · University Assistant</p>
+              <p>A conversational assistant that helps students get university information in natural language — answers are grounded in a structured
+                institutional knowledge base, not guessed by the model.</p>
+              <ul class="ticks">
+                <li>Hybrid semantic + keyword retrieval</li>
+                <li>Intent classification &amp; routing</li>
+                <li>Conversation-state management</li>
+                <li>Fallbacks for retrieval failures</li>
+              </ul>
+              <ul class="tags"><li>TypeScript</li><li>Node.js</li><li>ChromaDB</li><li>Fuse.js</li><li>LLM APIs</li></ul>
+              <div class="project__links">
+                <button class="link-arrow" data-open="rguCase">Explore Architecture</button>
+                <a href="#" class="link-arrow">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03 JHARKHAND SAFETY AR -->
+          <article class="project reveal" data-cat="xr">
+            <div class="project__visual">
+              <div class="viz viz--ar" aria-hidden="true">
+                <div class="ar-frame">
+                  <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+                  <div class="ar-box ar-box--a"><span>HAZARD · 0.94</span></div>
+                  <div class="ar-box ar-box--b"><span>PPE MISSING</span></div>
+                  <div class="scanline"></div>
+                </div>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <span class="project__idx">iii</span>
+                <span class="status is-proto">Prototype</span>
+                <span class="award">SIH 2026</span>
+              </div>
+              <h3 class="project__title">Jharkhand Safety AR</h3>
+              <p class="project__kicker">Augmented Reality for Industrial Safety Training</p>
+              <p>An immersive safety-training system combining AR, VR and computer vision so workers can recognise hazards and rehearse the right
+                response — before it matters.</p>
+              <ul class="ticks">
+                <li>AR-based hazard identification</li>
+                <li>Camera-based visual recognition</li>
+                <li>Interactive safety scenarios</li>
+                <li>VR training environments</li>
+              </ul>
+              <ul class="tags"><li>Python</li><li>FastAPI</li><li>Computer Vision</li><li>AR/VR</li></ul>
+              <div class="project__links">
+                <a href="#" class="link-arrow">Case Study</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 04 SEISMORA -->
+          <article class="project project--flip reveal" data-cat="hw">
+            <div class="project__visual">
+              <div class="viz viz--blueprint" aria-hidden="true">
+                <svg viewBox="0 0 300 200">
+                  <defs><pattern id="grid" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M15 0H0V15" fill="none" stroke="currentColor" stroke-opacity=".15" /></pattern></defs>
+                  <rect width="300" height="200" fill="url(#grid)" />
+                  <path class="draw" d="M95 40 C 80 90, 90 150, 150 165 C 210 150, 220 90, 205 40" />
+                  <path class="draw d2" d="M110 45 C 100 90, 108 140, 150 150 C 192 140, 200 90, 190 45" />
+                  <line class="draw d3" x1="80" y1="40" x2="220" y2="40" />
+                  <text x="228" y="44">Ø socket</text>
+                  <text x="160" y="185">soft insert</text>
+                </svg>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <span class="project__idx">iv</span>
+                <span class="status is-proto">Prototype</span>
+                <span class="award">SIH 2025 Finalist</span>
+              </div>
+              <h3 class="project__title">SEISMORA</h3>
+              <p class="project__kicker">Portable Soft-Insert Contouring Device for 3D-Printed Prosthetic Sockets</p>
+              <p>A compact, portable device designed to improve how soft inserts are shaped for 3D-printed prosthetic sockets — practical
+                engineering in service of assistive technology.</p>
+              <ul class="ticks">
+                <li>Assistive technology</li>
+                <li>Hardware prototyping</li>
+                <li>Product design &amp; engineering</li>
+                <li>3D printing &amp; manufacturing</li>
+              </ul>
+              <ul class="tags"><li>Hardware</li><li>Product Design</li><li>3D Printing</li></ul>
+              <div class="project__links">
+                <a href="#" class="link-arrow">Prototype Gallery</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05 THE KNIGHT -->
+          <article class="project reveal" data-cat="xr">
+            <div class="project__visual">
+              <div class="viz viz--game" aria-hidden="true">
+                <div class="parallax p1"></div>
+                <div class="parallax p2"></div>
+                <div class="platform pl1"></div>
+                <div class="platform pl2"></div>
+                <div class="platform pl3"></div>
+                <div class="knight"></div>
+                <span class="viz__label">Press ▶ to play</span>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <span class="project__idx">v</span>
+                <span class="status is-done">Completed</span>
+              </div>
+              <h3 class="project__title">The Knight</h3>
+              <p class="project__kicker">2D Platformer · Unity</p>
+              <p>A 2D platformer built in Unity and C# — exploring player movement, collision handling, level design and the small details that
+                make a game feel good to play.</p>
+              <ul class="ticks">
+                <li>Character controller &amp; movement</li>
+                <li>Collision &amp; game physics</li>
+                <li>Level design</li>
+              </ul>
+              <ul class="tags"><li>Unity</li><li>C#</li><li>2D Physics</li></ul>
+              <div class="project__links">
+                <a href="#" class="link-arrow">Watch Gameplay</a>
+                <a href="#" class="link-arrow">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 06 MBBS -->
+          <article class="project project--flip reveal" data-cat="ai">
+            <div class="project__visual">
+              <div class="viz viz--cards" aria-hidden="true">
+                <div class="flash f3"><span>Q</span>Which nerve innervates the deltoid?</div>
+                <div class="flash f2"><span>Q</span>Name the branches of the brachial plexus.</div>
+                <div class="flash f1"><span>A</span>Axillary nerve (C5–C6)</div>
+              </div>
+            </div>
+            <div class="project__body">
+              <div class="project__top">
+                <span class="project__idx">vi</span>
+                <span class="status is-dev">In Development</span>
+              </div>
+              <h3 class="project__title">MBBS AI Study Assistant</h3>
+              <p class="project__kicker">AI-Powered Medical Learning Platform</p>
+              <p>A learning platform that helps medical students study from their own academic resources with AI-assisted explanations and
+                interactive tools.</p>
+              <p class="planned">Planned capabilities</p>
+              <ul class="ticks ticks--planned">
+                <li>Document Q&amp;A with RAG</li>
+                <li>AI tutor</li>
+                <li>Flashcard generation</li>
+                <li>Case-based practice</li>
+              </ul>
+              <ul class="tags"><li>Python</li><li>FastAPI</li><li>Vector DB</li><li>PWA</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section class="section achievements" id="achievements">
+      <div class="container">
+        <p class="kicker reveal"><b>03</b> — Recognition</p>
+        <h2 class="section-title reveal">Built under pressure.<br /><span class="serif-inline">recognised for it.</span></h2>
+
+        <div class="timeline">
+          <div class="timeline__line" aria-hidden="true"><span></span></div>
+
+          <div class="milestone reveal">
+            <span class="milestone__dot"></span>
+            <div class="ticket">
+              <div class="ticket__stub"><span>2025</span></div>
+              <div class="ticket__main">
+                <h3>Smart India Hackathon — Finalist</h3>
+                <p>Selected as a national finalist with SEISMORA, a prosthetic-socket insert contouring device.</p>
+                <a href="#" class="evidence">View certificate ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="milestone reveal">
+            <span class="milestone__dot"></span>
+            <div class="ticket ticket--pink">
+              <span class="ticket__tape"></span>
+              <div class="ticket__stub"><span>2026</span></div>
+              <div class="ticket__main">
+                <h3>SIH 2026 IDE Bootcamp — Best Performing Team</h3>
+                <p>Won Best Performing Team at the IDE Bootcamp held at Thiagarajar College.</p>
+                <a href="#" class="evidence">View certificate ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="milestone reveal">
+            <span class="milestone__dot"></span>
+            <div class="ticket">
+              <div class="ticket__stub"><span>2026</span></div>
+              <div class="ticket__main">
+                <h3>Global Game Jam 2026</h3>
+                <p>Participated in the collaborative game-development jam at the Kerala site.</p>
+                <a href="#" class="evidence">See the jam entry ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="milestone reveal">
+            <span class="milestone__dot"></span>
+            <div class="ticket">
+              <div class="ticket__stub"><span>Ongoing</span></div>
+              <div class="ticket__main">
+                <h3>10+ Hackathons</h3>
+                <p>Prototyping, pitching and shipping with teams under tight deadlines.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="milestone reveal">
+            <span class="milestone__dot"></span>
+            <div class="ticket">
+              <div class="ticket__stub"><span>Community</span></div>
+              <div class="ticket__main">
+                <h3>TEDxRTC — Moderator</h3>
+                <p>Moderated sessions and kept conversations between speakers and audience flowing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <p class="kicker reveal"><b>04</b> — Toolkit</p>
+        <h2 class="section-title reveal">What I build with.</h2>
+
+        <div class="skill-grid">
+          <div class="skill-card reveal tilt">
+            <span class="tape tape--card"></span>
+            <i class="skill-card__num">i</i>
+            <h3>AI &amp; Machine Learning</h3>
+            <ul><li>RAG</li><li>LLM Integration</li><li>Intent Classification</li><li>Vector Search</li><li>Data Processing</li></ul>
+          </div>
+          <div class="skill-card reveal tilt">
+            <span class="tape tape--card"></span>
+            <i class="skill-card__num">ii</i>
+            <h3>Languages</h3>
+            <ul><li>Python</li><li>Java</li><li>JavaScript</li><li>TypeScript</li><li>C#</li></ul>
+          </div>
+          <div class="skill-card reveal tilt">
+            <span class="tape tape--card"></span>
+            <i class="skill-card__num">iii</i>
+            <h3>Web Development</h3>
+            <ul><li>React</li><li>Node.js</li><li>Express</li><li>FastAPI</li><li>Tailwind CSS</li></ul>
+          </div>
+          <div class="skill-card reveal tilt">
+            <span class="tape tape--card"></span>
+            <i class="skill-card__num">iv</i>
+            <h3>Data &amp; Infra</h3>
+            <ul><li>ChromaDB</li><li>Redis</li><li>Docker</li><li>Git &amp; GitHub</li><li>REST APIs</li></ul>
+          </div>
+          <div class="skill-card skill-card--wide reveal">
+            <i class="skill-card__num">v</i>
+            <h3>Immersive Tech</h3>
+            <ul><li>Unity</li><li>AR</li><li>VR</li><li>Blender</li><li>3D Scanning</li><li>Vuforia</li><li>ARCore / ARKit</li></ul>
+            <p class="learning"><span class="pulse"></span> Currently levelling up: AI agents · computer vision · shaders</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section experience" id="experience">
+      <div class="container exp__grid">
+        <div>
+          <p class="kicker reveal"><b>05</b> — Experience &amp; community</p>
+          <h2 class="section-title reveal">I don't build alone.</h2>
+          <p class="serif-quote reveal">One community. Every batch. Building together.</p>
+        </div>
+        <ol class="numerals numerals--lg">
+          <li class="reveal"><i>i</i><div>
+            <div class="exp__role"><h3>TEDxRTC</h3><span class="status is-proto">Moderator</span></div>
+            <p>Moderated sessions and coordinated conversations between speakers and audience — communication under a live spotlight.</p>
+          </div></li>
+          <li class="reveal"><i>ii</i><div>
+            <div class="exp__role"><h3>Hackathon Teams</h3><span class="status is-proto">Technical Contributor</span></div>
+            <p>Designing and building prototypes with cross-functional teams, then presenting them to judges against the clock.</p>
+          </div></li>
+          <li class="reveal"><i>iii</i><div>
+            <div class="exp__role"><h3>Game Dev Community</h3><span class="status is-dev">Initiative · In Development</span></div>
+            <p>Creating a space where aspiring game developers can experiment, collaborate, share knowledge, and turn ambitious ideas into playable experiences.</p>
+          </div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ BEYOND ============ -->
+    <section class="section beyond" id="beyond">
+      <div class="container">
+        <div class="beyond__card reveal">
+          <span class="tape tape--beyond" aria-hidden="true"></span>
+          <p class="kicker kicker--cream"><b>06</b> — Beyond the code</p>
+          <blockquote>I'm fascinated by technology that makes people curious — an intelligent system, an immersive game world, or a machine engineered to do something extraordinary.</blockquote>
+          <ul class="beyond__list">
+            <li>Game mechanics &amp; storytelling</li>
+            <li>Automotive &amp; engine tech</li>
+            <li>3D modeling &amp; environments</li>
+            <li>Emerging AI tools</li>
+            <li>Experimental builds with friends</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section education" id="education">
+      <div class="container edu__grid">
+        <div class="edu reveal">
+          <p class="kicker kicker--navy"><b>07</b> — Education</p>
+          <h3>B.E. Computer Science &amp; Engineering</h3>
+          <p class="edu__spec">Artificial Intelligence &amp; Machine Learning</p>
+          <p class="edu__uni">Rathinam Global Deemed to be University</p>
+          <div class="edu__meta">
+            <span>CGPA <strong>9.04</strong></span>
+            <!-- TODO: set your graduation year -->
+            <span>Expected <strong>20XX</strong></span>
+          </div>
+        </div>
+        <a href="../../assets/Kaiuf_M_Resume.pdf" class="ticket ticket--resume reveal magnetic" target="_blank" rel="noopener">
+          <span class="ticket__tape"></span>
+          <div class="ticket__stub"><span>Admit One</span></div>
+          <div class="ticket__main">
+            <strong>Download Resume</strong>
+            <em>PDF · always up to date</em>
+            <span class="barcode"></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="container contact__inner">
+        <p class="kicker reveal"><b>08</b> — Contact</p>
+        <h2 class="contact__title reveal">Have an interesting<br /><span class="tape-block">problem</span> to solve?</h2>
+        <p class="serif-quote serif-quote--center reveal">Every idea deserves a chance. Let's build something that matters.</p>
+        <!-- TODO: replace with your real email -->
+        <a href="mailto:hello@example.com" class="contact__email reveal magnetic">hello@example.com</a>
+        <div class="socials reveal">
+          <!-- TODO: replace with your real profile URLs -->
+          <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="../../assets/Kaiuf_M_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    <p class="footer__big">Kaiuf M <span>—</span> Engineer by Curiosity</p>
+    <p class="footer__tag">Learn · Build · Collaborate · Compete · Grow Together</p>
+    <div class="footer__row">
+      <span>© <span id="year"></span> Kaiuf M</span>
+      <a href="#home">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- ============ RGU CASE STUDY MODAL ============ -->
+  <dialog class="case" id="rguCase" aria-labelledby="rguCaseTitle">
+    <button class="case__close" data-close aria-label="Close">✕</button>
+    <p class="kicker"><b>ii</b> — Engineering deep-dive</p>
+    <h2 id="rguCaseTitle">RGU AI Assistant — how a query flows</h2>
+    <div class="pipeline">
+      <div class="node"><span>01</span>User query</div>
+      <div class="edge"></div>
+      <div class="node"><span>02</span>Intent classifier</div>
+      <div class="edge"></div>
+      <div class="node node--hl"><span>03</span>Exact-match router</div>
+      <div class="edge"></div>
+      <div class="node"><span>04</span>Hybrid retrieval<small>ChromaDB + Fuse.js</small></div>
+      <div class="edge"></div>
+      <div class="node"><span>05</span>Grounded LLM answer</div>
+    </div>
+    <div class="case__cols">
+      <div>
+        <h3>The problem</h3>
+        <p>Pure semantic search was <strong>contaminating results</strong>: short acronyms (department and course codes) matched the wrong documents
+          because embeddings treat them as near-synonyms. Students got confident answers about the wrong program.</p>
+      </div>
+      <div>
+        <h3>What I built</h3>
+        <p>An <strong>exact-match routing layer</strong> that catches known entities and acronyms before vector search, plus
+          <strong>sparse (keyword) retrieval</strong> via Fuse.js blended with ChromaDB results. Conversation state carries context between turns,
+          and a fallback path responds honestly when retrieval confidence is low.</p>
+      </div>
+    </div>
+    <p class="case__note">TODO: add before/after accuracy numbers from your tests — they make this case study land.</p>
+  </dialog>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
