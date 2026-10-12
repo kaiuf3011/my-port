@@ -50,7 +50,7 @@
   };
   requestAnimationFrame(() => loader.classList.add("is-ready"));
   $("#skipLoader").addEventListener("click", finishLoader);
-  setTimeout(finishLoader, reduceMotion ? 0 : seen ? 700 : 2300);
+  setTimeout(finishLoader, reduceMotion ? 0 : seen ? 900 : 2800);
 
   /* ---------- cursor ---------- */
   if (finePointer && !reduceMotion) {
@@ -203,6 +203,13 @@
   let lastManifesto = -1;
   function onScroll() {
     header.classList.toggle("is-compact", scrollY > 80);
+
+    /* header colour: light text over dark sections (or the expanded navy card), navy text over cream */
+    const probe = document.elementsFromPoint(Math.min(60, innerWidth / 2), 40)
+      .find((el) => !el.closest(".header, .cursor, .side-pill, .hover-preview"));
+    const zone = probe && probe.closest(".weare__card, .theme-dark, .theme-light, .slide, [data-theme]");
+    const dark = !!zone && (zone.classList.contains("weare__card") || zone.classList.contains("theme-dark") || zone.classList.contains("slide") || zone.dataset.theme === "dark");
+    header.classList.toggle("on-dark", dark);
 
     /* I AM — expanding card */
     if (weare) {
